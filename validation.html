@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<form action="#" onsubmit="return validation()">
+		username:
+		<input type="text" name="" id="user" ><!-- required -->
+		<span id="username" style="color: red;"></span>
+		<br>
+
+		Password:
+		<input type="text" name="" id="pass" >   <!--  required -->
+		<span id="username" style="color: red;"></span>
+		<br>
+	    Phone:
+	    <input type="text" name="" id="phone">
+	    <span id="mobile_number" style="color: red;"></span>
+
+		<button type="submit">Submit</button>
+		
+	</form>
+
+	<script>
+		
+		function validation(){
+     	var user = document.getElementById('user').value;//get
+     	var pass = document.getElementById('pass').value;//get
+     	var phone = document.getElementById('phone').value;
+     	
+
+     	if(user==""){
+
+     	    document.getElementById('username').innerHTML="** Please fill the username field";//set
+     		return false;
+     	}
+     	if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";//set
+				return false;	
+			}
+
+			if((!isNaN(user))){
+				document.getElementById('username').innerHTML =" ** Username must be character";//set
+				return false;
+			}
+
+			if(pass==""){
+
+     	    document.getElementById('Password').innerHTML="** Please fill the username field";//set
+     		return false;
+     	}
+     	if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('Password').innerHTML =" ** Username lenght must be between 2 and 20";//set
+				return false;	
+			}
+
+			if((!isNaN(pass))){
+				document.getElementById('Password').innerHTML =" ** Username must be character";//set
+				return false;
+			}
+
+
+     }
+
+
+
+
+	</script>
+
+</body>
+</html>
