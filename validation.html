@@ -15,11 +15,21 @@
 
 		Password:
 		<input type="text" name="" id="pass" >   <!--  required -->
-		<span id="username" style="color: red;"></span>
+		<span id="Password" style="color: red;"></span>
 		<br>
-	    Phone:
+
+		 Email:
+        <input type="text" name="" id="email">
+        <span id="Emailno" style="color: red;"></span>
+        <br>
+
+		<!-- 
+	     Phone:
 	    <input type="text" name="" id="phone">
 	    <span id="mobile_number" style="color: red;"></span>
+        <br> 
+ -->
+       
 
 		<button type="submit">Submit</button>
 		
@@ -30,7 +40,8 @@
 		function validation(){
      	var user = document.getElementById('user').value;//get
      	var pass = document.getElementById('pass').value;//get
-     	var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+     	// var phone = document.getElementById('phone').value;
      	
 
      	if(user==""){
@@ -50,18 +61,39 @@
 
 			if(pass==""){
 
-     	    document.getElementById('Password').innerHTML="** Please fill the username field";//set
+     	    document.getElementById('Password').innerHTML="** Please fill the password field";//set
      		return false;
      	}
-     	if((user.length <= 2) || (user.length > 20)) {
-				document.getElementById('Password').innerHTML =" ** Username lenght must be between 2 and 20";//set
+     	if((pass.length <= 8) || (user.length > 20)) {
+				document.getElementById('Password').innerHTML =" ** password lenght must be between 8 and 20";//set
 				return false;	
 			}
 
-			if((!isNaN(pass))){
-				document.getElementById('Password').innerHTML =" ** Username must be character";//set
-				return false;
-			}
+		if(pass!=confirm){
+			document.getElementById('Confirm_Password').innerHTML="**password and confirm password is not match";
+			return false;
+		}
+		if(email==""){
+			document.getElementById('Emailno').innerHTML="** Please fill the email field";
+			return false;
+		}
+
+		// if(phone==""){
+		// 	document.getElementById('mobile_number').innerHTML="** Please fill the mobile number";
+		// 	return false;
+		// }
+		// if(phone.length != 10){
+		// 	document.getElementById('mobile_number').innerHTML ="** mobile number should be 10 number";
+		// 	return false;
+
+		// }
+		// if (isNaN(phone)) {
+		// 	document.getElementById('mobile_number').innerHTML ="** only number is allow you can not fill  character"; //set
+		// 	return false;
+		// }
+	
+		
+
 
 
      }
